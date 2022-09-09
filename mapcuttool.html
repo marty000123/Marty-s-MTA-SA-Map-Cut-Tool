@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="default.js"></script>
+    <link rel="stylesheet" href="default.css">
+</head>
+
+<body onload="setup()">
+    <h1>Marty's MTA SA Map Cut Tool</h1>
+    <img src="images/cut.png" height="100px" width="100px">
+    <p>You can use this tool to split an area from an existing map.</p> 
+    <p>Useful if you made a large map with objects all around San Andreas, but want to remove all objects in a specific area (and perhaps use that in a different map resource).</p>
+    <p>Make sure the "location" resource is activated (available in community) and do /getpos ingame to get the required values.</p>
+    <p>© - created by Marty a.k.a. marty000123 in 2022. You can contact me on Discord @ Marty#7106.</p>
+    <form id='upload' method="post"> 
+        <input id='fileid' type='file' name='filename' accept='.map' hidden/>
+        <input id='buttonid' type='button' value='Upload a .map file here'/> 
+        <input type='submit' value='Submit' hidden /> 
+    </form> <br>
+    <div id="submitted">
+        <h2>Successfully loaded map: <span id="loaded"></span></h2><br>
+
+        <h3>Put in coords of area you want to split from the map</h3>
+        <form id="coords" method="post">
+            <label for="x">X:</label><br>
+            <input type="number" id="x" name="x" required><br>
+            <label for="y">Y:</label><br>
+            <input type="number" id="y" name="y" required><br>
+            <label for="xw">X width:</label><br>
+            <input type="number" id="xw" name="xw" required><br>
+            <label for="yw">Y width:</label><br>
+            <input type="number" id="yw" name="yw" required><br>
+        </form>
+        <button id="submit2">CUT!</button>
+
+        <br><br><button type="button" class="collapsible2">Click to view live map editor</button>
+        <canvas id="livemap" width="600" height="600">
+            Using a browser from the stone age are we? Use HTML5.
+            <div style="display:none;"><img id="sanandreas" src="images/sanandreas.png" height="600px" width="600px"></div>
+        </canvas>
+        <br><br><button type="button" class="collapsible">Click to view uploaded map file</button>
+        <p id="mapcontent"></p>
+    </div>
+    <div id="submitted2">
+        <h2>Successfully split!</h2>
+        <h3>You can now download the two map files below.</h3><br>
+
+        <button id="old">Download original file now without the selected area</button><br><br>
+        <button id="new">Download new file consisting of the cut area</button><br><br><br><br>
+        <form method="post"> 
+            <input type='submit' value='Cut another map!' /> 
+        </form>
+    </div>
+</body>
+
+</body>
+</html>
