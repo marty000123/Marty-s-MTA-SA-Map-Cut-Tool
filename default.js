@@ -122,24 +122,22 @@ function prepareCanvas() {
     const y = Math.ceil(document.getElementById('y').value);
     const xw = Math.ceil(document.getElementById('xw').value);
     const yw = Math.ceil(document.getElementById('yw').value);
-    if (x != "" && y != "" && xw != "" && yw != "") {
-        ctx.strokeStyle = 'red';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(300+x/10, 300+y/10);
-        ctx.lineTo(300+((x+xw)/10), 300-(y/10));
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(300+x/10, 300+y/10);
-        ctx.lineTo(300+(x/10), 300-((y+yw)/10));
-        ctx.stroke();
-        ctx.fillStyle = "#FF0000";
-        ctx.lineWidth = 1;
-        ctx.globalAlpha = 0.25;
-        ctx.beginPath();
-        ctx.fillRect(300+x/10, 300+y/10, xw/10, -yw/10);
-        ctx.stroke();
-    }
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo((3000+x)/10, (3000-y)/10);
+    ctx.lineTo((3000+(x+xw))/10, (3000-y)/10);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo((3000+x)/10, (3000-y)/10);
+    ctx.lineTo((3000+x)/10, (3000-(y+yw))/10);
+    ctx.stroke();
+    ctx.fillStyle = "#FF0000";
+    ctx.lineWidth = 1;
+    ctx.globalAlpha = 0.25;
+    ctx.beginPath();
+    ctx.fillRect(300+x/10, 300-y/10, xw/10, -yw/10);
+    ctx.stroke();
 }
 
 function fill() {
