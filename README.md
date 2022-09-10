@@ -4,7 +4,7 @@ You can use this tool to split an area from an existing map.
 
 Useful if you made a large map with objects all around San Andreas, but want to remove all objects in a specific area (and perhaps use that in a different map resource).
 
-Make sure the "location" resource is activated (available in community) and do /getpos ingame to get the required values. 
+Make sure the "location" resource is activated (available in community) and do /getpos ingame to get the required values. Remember: no negative (or 0) widths, so start in the southwestern corner (as you would do while creating RadarAreas).
 
 
 ### Installation

@@ -42,6 +42,18 @@ function showOptions(event) {
 }
 
 function process() {
+    const x = Math.ceil(document.getElementById('x').value);
+    const y = Math.ceil(document.getElementById('y').value);
+    const xw = Math.ceil(document.getElementById('xw').value);
+    const yw = Math.ceil(document.getElementById('yw').value);
+    if (x == "" || y == "" || xw == "" || yw == "") {
+        alert("All values are required.");
+        return;
+    } 
+    if (xw < 0 || yw < 0) {
+        alert("Learn to read: I told you to not use negative values for the widths. Try again :)");
+        return;
+    }
     document.getElementById('submitted').style.display = "none";
     var oldmap = mapcontent.split('>');
     for (let index = 0; index < oldmap.length; index++) {
@@ -57,10 +69,6 @@ function process() {
             newmap.push(oldmap[s]);
         } else {
             if (oldmap[s].length < 25) continue;
-            const x = Math.ceil(document.getElementById('x').value);
-            const y = Math.ceil(document.getElementById('y').value);
-            const xw = Math.ceil(document.getElementById('xw').value);
-            const yw = Math.ceil(document.getElementById('yw').value);
             const sx = Math.ceil(oldmap[s].match(/posX="((?:\\.|[^"\\])*)"/)[1]);
             const sy = Math.ceil(oldmap[s].match(/posY="((?:\\.|[^"\\])*)"/)[1]);
             if ((sx < x + xw && sx > x) && (sy < y + yw && sy > y)) {

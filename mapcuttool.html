@@ -11,7 +11,7 @@
     <img src="images/cut.png" height="100px" width="100px">
     <p>You can use this tool to split an area from an existing map.</p> 
     <p>Useful if you made a large map with objects all around San Andreas, but want to remove all objects in a specific area (and perhaps use that in a different map resource).</p>
-    <p>Make sure the "location" resource is activated (available in community) and do /getpos ingame to get the required values.</p>
+    <p>Make sure the "location" resource is activated (available in community) and do /getpos ingame to get the required values. Remember: no negative (or 0) widths, so start in the southwestern corner (as you would do while creating RadarAreas).</p>
     <p>© - created by Marty a.k.a. marty000123 in 2022. You can contact me on Discord @ Marty#7106.</p>
     <form id='upload' method="post"> 
         <input id='fileid' type='file' name='filename' accept='.map' hidden/>
@@ -28,9 +28,9 @@
             <label for="y">Y:</label><br>
             <input type="number" id="y" name="y" required><br>
             <label for="xw">X width:</label><br>
-            <input type="number" id="xw" name="xw" required><br>
+            <input type="number" id="xw" name="xw" min="1" required><br>
             <label for="yw">Y width:</label><br>
-            <input type="number" id="yw" name="yw" required><br>
+            <input type="number" id="yw" name="yw" min="1" required><br>
         </form>
         <button id="submit2">CUT!</button>
 
